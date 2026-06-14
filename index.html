@@ -180,20 +180,21 @@
             align-items: stretch;
         }
 
-        /* Left: 돌림판 영역 */
+        /* Left: 돌림판 영역 (비중 확대 1.4 -> 2.25) */
         .left-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex: 1.4; 
+            flex: 2.25; 
             height: 100%;
             position: relative;
         }
 
+        /* 돌림판을 화면 높이에 맞춰 더 꽉 차게 확장 (85% -> 92%) */
         .wheel-container {
             position: relative;
-            height: 85%; 
+            height: 92%; 
             aspect-ratio: 1 / 1;
             display: flex;
             justify-content: center;
@@ -207,9 +208,9 @@
             transform: translateX(-50%);
             width: 0;
             height: 0;
-            border-left: 22px solid transparent;
-            border-right: 22px solid transparent;
-            border-top: 32px solid #000000;
+            border-left: 24px solid transparent;
+            border-right: 24px solid transparent;
+            border-top: 34px solid #000000;
             z-index: 10;
         }
 
@@ -227,9 +228,9 @@
             display: flex;
             gap: 15px;
             width: 100%;
-            max-width: 550px;
+            max-width: 600px;
             justify-content: center;
-            margin-top: 12px;
+            margin-top: 10px;
             flex-shrink: 0;
         }
 
@@ -261,9 +262,9 @@
             color: #854d0e;
         }
 
-        /* Center: 메뉴 편집 및 리스트 영역 */
+        /* Center: 메뉴 편집 및 리스트 영역 (비중 축소 1.25 -> 0.95) */
         .center-menu-section {
-            flex: 1.25; 
+            flex: 0.95; 
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -276,9 +277,9 @@
         }
         .center-menu-section.collapsed { display: none !important; }
 
-        /* Right Side: 타이머 및 밴 메뉴 전용 사이드바 */
+        /* Right Side: 타이머 및 밴 메뉴 전용 사이드바 (비중 축소 0.55 -> 0.45) */
         .right-gadget-sidebar {
-            flex: 0.55;
+            flex: 0.45;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -368,19 +369,18 @@
         }
         .menu-item-row-left .input-name:focus { background-color: #f1f5f9; outline: none; border: 1px solid #cbd5e1 !important; border-radius: 4px; }
 
-        /* 🛠️ 오리지널 스타일 컨트롤 버튼 가로 정렬 셋업 */
-        .menu-item-row-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-        .weight-control-box { display: flex; align-items: center; gap: 4px; }
+        /* 🛠️ 컨트롤 버튼 레이아웃 - 좁아진 화면에 맞춤 정렬 */
+        .menu-item-row-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+        .weight-control-box { display: flex; align-items: center; gap: 3px; }
         
-        .btn-arrow { padding: 3px 8px; font-size: 11px; font-weight: bold; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; height: 26px; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-arrow { padding: 3px 6px; font-size: 11px; font-weight: bold; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; height: 26px; display: inline-flex; align-items: center; justify-content: center; }
         .btn-arrow:hover { background-color: #f1f5f9; }
         
-        /* 🔴 요청 사항: 가중치 직접 수정 가능한 빨간색 글씨 인풋 스타일 */
         .input-weight-live {
-            width: 38px;
+            width: 32px;
             height: 24px;
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             color: #ef4444; 
             border: 1px solid #cbd5e1;
@@ -390,18 +390,18 @@
         }
         .input-weight-live:focus { outline: none; border-color: #ef4444; background-color: #fffafb; }
 
-        .btn-quick-calc { padding: 3px 6px; font-size: 11px; font-weight: bold; background-color: #f0fdf4; border: 1px solid #bbf7d0; color: #16a34a; border-radius: 4px; cursor: pointer; height: 26px; }
+        .btn-quick-calc { padding: 3px 5px; font-size: 11px; font-weight: bold; background-color: #f0fdf4; border: 1px solid #bbf7d0; color: #16a34a; border-radius: 4px; cursor: pointer; height: 26px; }
         .btn-quick-calc:hover { background-color: #dcfce7; }
-        .btn-quick-calc-large { padding: 3px 6px; font-size: 11px; font-weight: bold; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #2563eb; border-radius: 4px; cursor: pointer; height: 26px; }
+        .btn-quick-calc-large { padding: 3px 5px; font-size: 11px; font-weight: bold; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #2563eb; border-radius: 4px; cursor: pointer; height: 26px; }
         .btn-quick-calc-large:hover { background-color: #dbeafe; }
 
-        .percentage-text { font-size: 13px; font-weight: bold; color: #475569; min-width: 48px; text-align: right; margin-right: 2px; }
+        .percentage-text { font-size: 12px; font-weight: bold; color: #475569; min-width: 42px; text-align: right; margin-right: 2px; }
 
         .btn-item-delete {
             background-color: #ffeaea;
             color: #ef4444;
             border: 1px solid #fca5a5;
-            padding: 3px 8px;
+            padding: 3px 6px;
             font-size: 12px;
             font-weight: bold;
             border-radius: 4px;
@@ -461,7 +461,7 @@
     </div>
 
     <div class="main-container" id="main-layout-box">
-        <!-- 1. 좌측 돌림판 영역 -->
+        <!-- 1. 좌측 돌림판 영역 (확장됨) -->
         <div class="left-section">
             <div class="wheel-container">
                 <div class="wheel-pointer"></div>
@@ -474,7 +474,7 @@
             </div>
         </div>
 
-        <!-- 2. 중앙 메뉴 편집 및 리스트 영역 -->
+        <!-- 2. 중앙 메뉴 편집 및 리스트 영역 (축소됨) -->
         <div class="center-menu-section" id="menu-sidebar">
             <div>
                 <div class="section-title">✨ 메뉴 추가</div>
@@ -492,14 +492,13 @@
                 <label class="checkbox-label">
                     <input type="checkbox" id="dup-filter-check" onchange="toggleDuplicateFilter()"> 중복만 보기
                 </label>
-                <!-- 🔴 오리지널 위치에 전체 초기화 버튼 확실히 재배치 -->
                 <button onclick="resetAll()" style="margin-left: auto; color: #dc2626; border: 1px solid #fca5a5; background-color: #ffeaea; font-weight: bold;">전체 초기화</button>
             </div>
 
             <ul id="menu-list" class="menu-list"></ul>
         </div>
 
-        <!-- 3. 우측 타이머 & 밴 메뉴 전용 사이드바 가젯 -->
+        <!-- 3. 우측 타이머 & 밴 메뉴 전용 사이드바 가젯 (축소됨) -->
         <div class="right-gadget-sidebar" id="gadget-sidebar">
             <div>
                 <div class="section-title">⏱️ 멀티 타이머 기능</div>
@@ -743,7 +742,6 @@
             }
         }
 
-        /* ⚡ 렉 제거 핵심 최적화: 타이핑 할 때 전체 리스트 리프레시를 하지 않고 가중치와 퍼센트 텍스트만 콕 집어 업데이트 */
         function updateWeight(id, newWeight) { 
             const item = menus.find(m => m.id === id); 
             if (item) { 
@@ -751,10 +749,7 @@
                 item.weight = isNaN(val) ? 0 : Math.max(0, val); 
                 saveToStorage(); 
                 
-                // 1. 전체 가중치 합산 재계산
                 const totalWeight = menus.reduce((sum, m) => sum + m.weight, 0);
-                
-                // 2. DOM 리스트 요소들을 순회하며 % 값만 초고속 실시간 갱신
                 const listItems = document.querySelectorAll('#menu-list .menu-item');
                 menus.forEach((m, idx) => {
                     if (listItems[idx]) {
@@ -762,13 +757,10 @@
                         const pctEl = listItems[idx].querySelector('.percentage-text');
                         if (pctEl) pctEl.textContent = pctText + '%';
                         
-                        // 버튼으로 증감할 시 인풋박스 내부 숫자도 동기화
                         const inputEl = listItems[idx].querySelector('.input-weight-live');
                         if (inputEl && document.activeElement !== inputEl) inputEl.value = m.weight;
                     }
                 });
-
-                // 3. 왼쪽 회전판 캔버스만 새로 그리기
                 renderCanvas(); 
             } 
         }
